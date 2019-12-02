@@ -1,7 +1,10 @@
 #!/usr/bin/env ruby
 
-input = File.read('day01.input')
+require_relative 'functions'
 
-fuel_required = input.lines.map(&:strip).map(&:to_i).map { |e| (e / 3).round - 2 }.sum
+input = File.read('day01.input')
+distances = input.lines.map(&:strip).map(&:to_i)
+
+fuel_required = distances.map(&method(:fuel_required_for)).sum
 
 puts "Day 01: Fuel Required #{fuel_required}"
