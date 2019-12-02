@@ -14,4 +14,9 @@ class FunctionsTest < Minitest::Test
     assert_equal 654, fuel_required_for(1969)
     assert_equal 33583, fuel_required_for(100756)
   end
+
+  def test_recursiv_fuel_required_for
+    assert_equal 966, recursiv_fuel_required_for(1969)
+    assert_equal 50346, recursiv_fuel_required_for(100756)
+  end
 end
